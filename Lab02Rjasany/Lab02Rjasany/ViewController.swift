@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     }
 
     //MARK: -Method for handling memory management
+    //TODO: -Final Commit Lab 02
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
