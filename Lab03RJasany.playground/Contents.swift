@@ -73,5 +73,25 @@ myCounter.decrement(by:7)
 myCounter.getCount()
 myCounter.display()
 
+func concatAll(words: [String], separator: String) -> String {
+    var wordsCombined = ""
+    
+    for word in words {
+        
+        if words.last != word
+        {
+            wordsCombined = wordsCombined + word + separator
+        }
+        else
+        {
+            wordsCombined = wordsCombined + word
+        }
+    }
+    
+    return wordsCombined
+    
+}
 
+var names = ["James", "Jane", "Tom", "Sally"]
+print(concatAll(words:names, separator: ","))
 
