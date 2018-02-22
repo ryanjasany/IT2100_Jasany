@@ -10,6 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var findInput: UITextField!
+    
+    @IBOutlet weak var replaceInput: UITextField!
+    
+    @IBOutlet weak var storyField: UITextView!
+    
+    
+    @IBAction func findReplaceAction(_ sender: Any) {
+        
+        storyField.text=storyField.text.replacingOccurrences(of: findInput.text!, with:replaceInput.text!)
+        
+        
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
