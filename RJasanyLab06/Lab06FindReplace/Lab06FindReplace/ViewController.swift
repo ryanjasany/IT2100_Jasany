@@ -25,6 +25,13 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func hideKeyboard(_ sender: Any) {
+        
+        findInput.resignFirstResponder()
+        replaceInput.resignFirstResponder()
+        storyField.resignFirstResponder()   
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
