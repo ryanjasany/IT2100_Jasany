@@ -63,10 +63,16 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.25" maxValue="1.75" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzn-ac-9NC">
                                 <rect key="frame" x="49" y="416" width="291" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="setSpeed:" destination="BYZ-38-t0r" eventType="valueChanged" id="s3o-Po-DfN"/>
+                                </connections>
                             </slider>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" continuous="NO" autorepeat="NO" wraps="YES" value="1" minimumValue="0.25" maximumValue="1.75" stepValue="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="qPK-Oa-pyV">
                                 <rect key="frame" x="153" y="509" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="incrementSpeed:" destination="BYZ-38-t0r" eventType="valueChanged" id="jFI-1j-8jj"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maximum Hops Per Second:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKU-AR-yXg">
                                 <rect key="frame" x="23" y="13" width="217" height="21"/>
@@ -86,11 +92,25 @@
                                 <rect key="frame" x="184" y="573" width="33" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Hop!"/>
+                                <connections>
+                                    <action selector="toggleAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VR3-lt-I2D"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="bunnyView1" destination="nTf-he-kRz" id="PiR-E4-IfH"/>
+                        <outlet property="bunnyView2" destination="ck3-Cv-tFn" id="7Vk-y4-NXH"/>
+                        <outlet property="bunnyView3" destination="x2M-az-dBm" id="4cF-nR-ZLq"/>
+                        <outlet property="bunnyView4" destination="dKB-At-qbi" id="zRS-kB-KT8"/>
+                        <outlet property="bunnyView5" destination="UOL-Cc-3th" id="24M-VQ-HRr"/>
+                        <outlet property="hopsPerSecond" destination="cwS-Tn-E3w" id="ffV-tp-CSY"/>
+                        <outlet property="speedSlider" destination="Wzn-ac-9NC" id="z9X-3l-oWQ"/>
+                        <outlet property="speedStepper" destination="qPK-Oa-pyV" id="3Hy-6P-rig"/>
+                        <outlet property="toggleButton" destination="J7l-hy-jW9" id="lX4-kr-BFa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
