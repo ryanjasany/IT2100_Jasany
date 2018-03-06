@@ -18,11 +18,36 @@ class ViewController: UIViewController {
     
     @IBAction func getFlowerDetail(_ sender: Any) {
         
-        flowerDetailView.hidden = !(sender as! UISwitch).on
+        flowerDetailView.isHidden = !(sender as! UISwitch).isOn
         
     }
     
     @IBAction func getFlower(_ sender: Any) {
+        var imageURL:URL
+        var detailURL:URL
+        var imageURLString:String
+        var detailURLString:String
+        var color:String
+        let sessionID:Int=Int(arc4random()%50000)
+        
+        color=colorChoice.titleForSegment(at: colorChoice.selectedSegmentIndex)!
+        
+        
+        
+        imageURLString = "https://teachyourselfios.info/?hour=9&color=\(color)&session=\(sessionID)"
+        
+        detailURLString = "https://teachyourselfios.info/?hour=9&session=\(sessionID)&type=detail"
+        
+        imageURL=URL(string:imageURLString)!
+        detailURL=URL(string:detailURLString)!
+        
+        flowerView.loadRequest(URLRequest(url:imageURL))
+        
+        flowerDetailView.loadRequest(URLRequest(url:detailURL))
+
+        
+        
+        
     }
     
     
