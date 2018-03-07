@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func getFlower(_ sender: Any) {
+    @IBAction func getFlower (sender:Any?) {
         var imageURL:URL
         var detailURL:URL
         var imageURLString:String
@@ -55,6 +55,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        flowerDetailView.isHidden=true
+        getFlower(sender: nil)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
