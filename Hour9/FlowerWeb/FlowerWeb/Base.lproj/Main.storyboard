@@ -35,7 +35,7 @@
                                     <segment title="Green"/>
                                 </segments>
                                 <connections>
-                                    <action selector="getFlower:" destination="BYZ-38-t0r" eventType="valueChanged" id="QZP-qW-9P5"/>
+                                    <action selector="changeFlower:" destination="BYZ-38-t0r" eventType="valueChanged" id="YcD-Tz-ALA"/>
                                 </connections>
                             </segmentedControl>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="I1H-Cq-sVT">
@@ -52,32 +52,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ii2-re-Bby">
-                                <rect key="frame" x="0.0" y="214" width="375" height="453"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dzZ-hJ-mkf">
-                                <rect key="frame" x="0.0" y="560" width="375" height="107"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Hx-Qc-Pmg">
                                 <rect key="frame" x="128" y="118" width="104" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Get New Photo"/>
                                 <connections>
-                                    <action selector="getFlower:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fOg-4L-Hgz"/>
+                                    <action selector="changeFlower:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WGR-Mx-ydM"/>
                                 </connections>
                             </button>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k7Q-EP-BgC">
+                                <rect key="frame" x="49" y="174" width="277" height="366"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" red="0.88748054208257188" green="0.63719633738405612" blue="0.99740932642487046" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="colorChoice" destination="fz5-lM-lo5" id="hGf-xl-m4f"/>
-                        <outlet property="flowerDetailView" destination="dzZ-hJ-mkf" id="lRc-tJ-4mI"/>
-                        <outlet property="flowerView" destination="Ii2-re-Bby" id="5zb-il-XLf"/>
+                        <outlet property="colorChoice" destination="fz5-lM-lo5" id="vMq-ab-url"/>
+                        <outlet property="flowerView" destination="k7Q-EP-BgC" id="NCE-Wc-YcA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -7,56 +7,49 @@
 //
 
 import UIKit
+import WebKit
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var colorChoice: UISegmentedControl!
     
-    @IBOutlet weak var flowerView: UIWebView!
+    @IBOutlet weak var flowerView: WKWebView!
     
-    @IBOutlet weak var flowerDetailView: UIWebView!
     
-    @IBAction func getFlowerDetail(_ sender: Any) {
-        
-        flowerDetailView.isHidden = !(sender as! UISwitch).isOn
-        
-    }
-    
-    @IBAction func getFlower (sender:Any?) {
-        var imageURL:URL
-        var detailURL:URL
-        var imageURLString:String
-        var detailURLString:String
-        var color:String
-        let sessionID:Int=Int(arc4random()%50000)
-        
-        color=colorChoice.titleForSegment(at: colorChoice.selectedSegmentIndex)!
-        
-        
-        
-        imageURLString = "https://teachyourselfios.info/?hour=9&color=\(color)&session=\(sessionID)"
-        
-        detailURLString = "https://teachyourselfios.info/?hour=9&session=\(sessionID)&type=detail"
-        
-        imageURL=URL(string:imageURLString)!
-        detailURL=URL(string:detailURLString)!
-        
-        flowerView.loadRequest(URLRequest(url:imageURL))
-        
-        flowerDetailView.loadRequest(URLRequest(url:detailURL))
+    @IBAction func changeFlower(_ sender: Any) {
 
         
+        var appleURLString = ""
+        switch colorChoice.selectedSegmentIndex {
+        case 0:
+            appleURLString = "https://teachyourselfios.info/?hour=9&color=yellow&session=1"
+        case 1:
+            appleURLString = "https://teachyourselfios.info/?hour=9&color=red&session=1"
+        case 2:
+            appleURLString = "https://teachyourselfios.info/?hour=9&color=blue&session=1"
+        case 3:
+            appleURLString = "https://teachyourselfios.info/?hour=9&color=green&session=1"
+        default:
+            appleURLString = "https://teachyourselfios.info/?hour=9&color=yellow&session=1"
+        }
         
-        
+        let myURL = URL(string: appleURLString)
+        let myRequest = URLRequest(url: myURL!)
+        flowerView.load(myRequest)
     }
+    
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        flowerDetailView.isHidden=true
-        getFlower(sender: nil)
+        let myURL = URL(string: "http://teachyourselfios.info/?hour=9&color=yellow&session=1")
+        let myRequest = URLRequest(url: myURL!)
+        flowerView.load(myRequest)
+        
+        /*flowerDetailView.isHidden=true
+        getFlower(sender: nil)*/
         
         
     }
