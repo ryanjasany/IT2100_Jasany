@@ -136,9 +136,18 @@ class ViewController: UIViewController {
     }
     
     @IBAction func doAlertSound(_ sender: Any) {
+        
+        var soundID:SystemSoundID = 0
+        let soundFile:String = Bundle.main.path(forResource: "alertsound",ofType:"wav")!
+        let soundURL:NSURL = NSURL(fileURLWithPath:soundFile)
+        AudioServicesCreateSystemSoundID(soundURL, &soundID)
+        AudioServicesPlayAlertSound(soundID)
     }
     
     @IBAction func doVibration(_ sender: Any) {
+        
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+        
     }
     
     override func viewDidLoad() {
