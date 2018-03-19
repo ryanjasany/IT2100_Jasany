@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AudioToolbox
+
 
 class ViewController: UIViewController {
 
@@ -84,9 +86,53 @@ class ViewController: UIViewController {
     }
     
     @IBAction func doActionSheet(_ sender: Any) {
+        
+        let alertController = UIAlertController(title: "Available Actions",
+                                                message:"choose something from this list",
+                                                preferredStyle:UIAlertControllerStyle.actionSheet)
+        
+        let negotiateAction = UIAlertAction(title:"Negotiate",
+                                            style:UIAlertActionStyle.default,
+                                            handler:{(alertAction:UIAlertAction)in self.userOutput.text="Pressed Negotiate"
+                                                
+        })
+        
+        let compromiseAction = UIAlertAction(title:"Compromise",
+                                             style:UIAlertActionStyle.default,
+                                             handler:{(alertAction:UIAlertAction)in self.userOutput.text="Pressed Compromise"})
+        
+        let destroyAction = UIAlertAction(title:"Destroy",
+                                             style:UIAlertActionStyle.destructive,
+                                             handler:{(alertAction:UIAlertAction)in self.userOutput.text="Pressed Destroy"})
+        
+        let cancelAction = UIAlertAction(title:"Cancel",
+                                             style:UIAlertActionStyle.cancel,
+                                             handler:{(alertAction:UIAlertAction)in self.userOutput.text="Pressed Cancel"})
+        
+        alertController.addAction(negotiateAction)
+        alertController.addAction(compromiseAction)
+        alertController.addAction(destroyAction)
+        alertController.addAction(cancelAction)
+        
+        if(alertController.popoverPresentationController != nil)
+        {
+            alertController.popoverPresentationController!.sourceView = sender as!UIButton
+                alertController.popoverPresentationController!.sourceRect = (sender as!UIButton).bounds
+            
+        }
+        
+        present(alertController, animated:true,completion:nil)
+        
     }
     
     @IBAction func doSound(_ sender: Any) {
+        
+        var soundID:SystemSoundID = 0
+        let soundFile:String = Bundle.main.path(forResource: "soundeffect",ofType:"wav")!
+        let soundURL:NSURL = NSURL(fileURLWithPath:soundFile)
+        AudioServicesCreateSystemSoundID(soundURL, &soundID)
+        AudioServicesPlaySystemSound(soundID)
+        
     }
     
     @IBAction func doAlertSound(_ sender: Any) {
