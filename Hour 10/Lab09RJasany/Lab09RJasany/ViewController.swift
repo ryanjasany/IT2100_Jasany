@@ -10,6 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var userEmail: UILabel!
+    
+    
+    @IBOutlet weak var favoriteLanguage: UILabel!
+    
+    @IBOutlet weak var selectedAction: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
