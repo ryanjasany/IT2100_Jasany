@@ -1,24 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Initial-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Initial" id="BYZ-38-t0r" customClass="ViewController" customModule="ModalEditor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tF4-7h-uHn">
+                                <rect key="frame" x="0.0" y="214" width="375" height="206"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mymail@email.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQk-Ui-WKm">
+                                        <rect key="frame" x="53" y="69" width="282" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTK-sg-k7l">
+                                        <rect key="frame" x="130" y="139" width="143" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="143" id="pjc-7W-b57"/>
+                                        </constraints>
+                                        <state key="normal" title="Edit"/>
+                                        <connections>
+                                            <segue destination="In0-9g-j0c" kind="popoverPresentation" identifier="toEditor" popoverAnchorView="zTK-sg-k7l" id="lVU-Ue-ASp">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1Y-om-8ab">
+                                        <rect key="frame" x="53" y="16" width="282" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="206" id="7Zd-eC-tWm"/>
+                                    <constraint firstItem="B1Y-om-8ab" firstAttribute="top" secondItem="tF4-7h-uHn" secondAttribute="top" constant="16" id="JFb-Hs-SBN"/>
+                                    <constraint firstAttribute="trailing" secondItem="B1Y-om-8ab" secondAttribute="trailing" constant="40" id="Neh-jz-Wp7"/>
+                                    <constraint firstItem="B1Y-om-8ab" firstAttribute="leading" secondItem="tF4-7h-uHn" secondAttribute="leading" constant="53" id="ToC-Rk-iZq"/>
+                                    <constraint firstItem="zTK-sg-k7l" firstAttribute="leading" secondItem="tF4-7h-uHn" secondAttribute="leading" constant="130" id="Va0-j5-Tcr"/>
+                                    <constraint firstItem="B1Y-om-8ab" firstAttribute="trailing" secondItem="YQk-Ui-WKm" secondAttribute="trailing" id="Ye7-tC-TTC"/>
+                                    <constraint firstItem="YQk-Ui-WKm" firstAttribute="top" secondItem="B1Y-om-8ab" secondAttribute="bottom" constant="32" id="Zcl-ee-OGP"/>
+                                    <constraint firstItem="B1Y-om-8ab" firstAttribute="leading" secondItem="YQk-Ui-WKm" secondAttribute="leading" id="cW8-HH-LIR"/>
+                                    <constraint firstItem="zTK-sg-k7l" firstAttribute="top" secondItem="YQk-Ui-WKm" secondAttribute="bottom" constant="49" id="ruH-ga-vWr"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.88748054210000005" green="0.63719633740000003" blue="0.99740932640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.88748054210000005" green="0.63719633740000003" blue="0.99740932640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="tF4-7h-uHn" secondAttribute="trailing" id="V89-tO-P8C"/>
+                            <constraint firstItem="tF4-7h-uHn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="194" id="ahB-Kn-sgv"/>
+                            <constraint firstItem="tF4-7h-uHn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="v69-9J-s8t"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="emailLabel" destination="YQk-Ui-WKm" id="V2E-P9-ghn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="THV-F8-N7k" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Editor-->
+        <scene sceneID="9Cg-KE-tco">
+            <objects>
+                <viewController title="Editor" id="In0-9g-j0c" customClass="EditorViewController" customModule="ModalEditor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p2s-KI-Svd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LBd-FX-tps">
+                                <rect key="frame" x="0.0" y="212" width="375" height="188"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2f-33-8FC">
+                                        <rect key="frame" x="98" y="15" width="181" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gpQ-08-iPf">
+                                        <rect key="frame" x="26" y="61" width="323" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="email"/>
+                                        <connections>
+                                            <action selector="hideKeyboard:" destination="In0-9g-j0c" eventType="editingDidEndOnExit" id="iF1-mJ-y4v"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8D-6c-ZWZ">
+                                        <rect key="frame" x="124" y="110" width="123" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="123" id="6zI-wW-jy5"/>
+                                        </constraints>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="updateEditor:" destination="In0-9g-j0c" eventType="touchUpInside" id="nUx-Gt-YUT"/>
+                                            <segue destination="THV-F8-N7k" kind="unwind" unwindAction="exitToHereWithSender:" id="zS5-gs-Prf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="gpQ-08-iPf" firstAttribute="centerX" secondItem="LBd-FX-tps" secondAttribute="centerX" id="0Fw-V2-DcS"/>
+                                    <constraint firstItem="H8D-6c-ZWZ" firstAttribute="leading" secondItem="LBd-FX-tps" secondAttribute="leading" constant="124" id="4vB-A6-w59"/>
+                                    <constraint firstItem="h2f-33-8FC" firstAttribute="top" secondItem="LBd-FX-tps" secondAttribute="top" constant="15" id="5KX-1d-O9F"/>
+                                    <constraint firstItem="h2f-33-8FC" firstAttribute="leading" secondItem="LBd-FX-tps" secondAttribute="leading" constant="98" id="CYf-yx-82q"/>
+                                    <constraint firstItem="gpQ-08-iPf" firstAttribute="leading" secondItem="LBd-FX-tps" secondAttribute="leading" constant="26" id="D10-aK-hwR"/>
+                                    <constraint firstItem="H8D-6c-ZWZ" firstAttribute="top" secondItem="gpQ-08-iPf" secondAttribute="bottom" constant="19" id="SfG-cg-Xgu"/>
+                                    <constraint firstItem="gpQ-08-iPf" firstAttribute="top" secondItem="h2f-33-8FC" secondAttribute="bottom" constant="25" id="cah-KM-pn6"/>
+                                    <constraint firstAttribute="height" constant="188" id="h8g-7y-dOI"/>
+                                    <constraint firstAttribute="trailing" secondItem="h2f-33-8FC" secondAttribute="trailing" constant="96" id="klG-59-2Yk"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LBd-FX-tps" firstAttribute="top" secondItem="DJ0-BI-IgT" secondAttribute="top" constant="192" id="Dui-KK-X2s"/>
+                            <constraint firstAttribute="trailing" secondItem="LBd-FX-tps" secondAttribute="trailing" id="LAR-kJ-Q9l"/>
+                            <constraint firstItem="LBd-FX-tps" firstAttribute="leading" secondItem="p2s-KI-Svd" secondAttribute="leading" id="hP8-IQ-1LB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DJ0-BI-IgT"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailField" destination="gpQ-08-iPf" id="dJ9-Gh-dcA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WKj-Q3-jQo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="800.79999999999995" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
