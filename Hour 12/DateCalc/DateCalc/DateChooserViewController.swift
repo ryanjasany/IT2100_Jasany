@@ -12,24 +12,38 @@ class DateChooserViewController: UIViewController {
 
     @IBAction func setDateTime(_ sender: Any) {
         
+        (presentingViewController as!ViewController).calculateDateDifference(chosenDate: (sender as!UIDatePicker).date as NSDate)
         
     }
     
     @IBAction func dismissDateChooser(_ sender: Any) {
         
+        dismiss(animated: true,completion: nil)
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        super.viewDidAppear(animated)
+        (presentingViewController as! ViewController).calculateDateDifference(chosenDate: NSDate())
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    
+        super.viewDidLoad()
+        
+        //preferredContentSize = CGSizeMake(340,380)
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 
     /*
