@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		ACCC8542207440B4000C84FB /* CustomPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACCC8542207440B4000C84FB /* Lab11-DatePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lab11-DatePicker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACCC8545207440B4000C84FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACCC8547207440B4000C84FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ACCC854A207440B4000C84FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		ACCC8543207440B4000C84FB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ACCC8542207440B4000C84FB /* CustomPicker.app */,
+				ACCC8542207440B4000C84FB /* Lab11-DatePicker.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,9 +70,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		ACCC8541207440B4000C84FB /* CustomPicker */ = {
+		ACCC8541207440B4000C84FB /* Lab11-DatePicker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ACCC8554207440B4000C84FB /* Build configuration list for PBXNativeTarget "CustomPicker" */;
+			buildConfigurationList = ACCC8554207440B4000C84FB /* Build configuration list for PBXNativeTarget "Lab11-DatePicker" */;
 			buildPhases = (
 				ACCC853E207440B4000C84FB /* Sources */,
 				ACCC853F207440B4000C84FB /* Frameworks */,
@@ -82,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = CustomPicker;
+			name = "Lab11-DatePicker";
 			productName = CustomPicker;
-			productReference = ACCC8542207440B4000C84FB /* CustomPicker.app */;
+			productReference = ACCC8542207440B4000C84FB /* Lab11-DatePicker.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -103,7 +103,7 @@
 					};
 				};
 			};
-			buildConfigurationList = ACCC853D207440B4000C84FB /* Build configuration list for PBXProject "CustomPicker" */;
+			buildConfigurationList = ACCC853D207440B4000C84FB /* Build configuration list for PBXProject "Lab11-DatePicker" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -116,7 +116,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				ACCC8541207440B4000C84FB /* CustomPicker */,
+				ACCC8541207440B4000C84FB /* Lab11-DatePicker */,
 			);
 		};
 /* End PBXProject section */
@@ -305,7 +305,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		ACCC853D207440B4000C84FB /* Build configuration list for PBXProject "CustomPicker" */ = {
+		ACCC853D207440B4000C84FB /* Build configuration list for PBXProject "Lab11-DatePicker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ACCC8552207440B4000C84FB /* Debug */,
@@ -314,7 +314,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ACCC8554207440B4000C84FB /* Build configuration list for PBXNativeTarget "CustomPicker" */ = {
+		ACCC8554207440B4000C84FB /* Build configuration list for PBXNativeTarget "Lab11-DatePicker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ACCC8555207440B4000C84FB /* Debug */,
