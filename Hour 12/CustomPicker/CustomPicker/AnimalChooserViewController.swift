@@ -78,6 +78,13 @@ class AnimalChooserViewController: UIViewController, UIPickerViewDataSource, UIP
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let initialView: ViewController = presentingViewController as!ViewController
+        initialView.displayAnimal(chosenAnimal: animalNames[0], withSound: animalSounds[0], fromComponent: "nothing yet...")
+    }
+    
     
     let kComponentCount: Int = 2
     let kAnimalComponent: Int = 0
@@ -88,6 +95,9 @@ class AnimalChooserViewController: UIViewController, UIPickerViewDataSource, UIP
     var animalImages:[UIImageView] = []
     
     @IBAction func dismissAnimalChooser(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+        
+        
     }
     
     
@@ -107,6 +117,8 @@ class AnimalChooserViewController: UIViewController, UIPickerViewDataSource, UIP
             UIImageView(image:UIImage(named:"pig.png"))
         ]
         //UIImageView(image:UIImage(named:".png")),
+        
+        //preferredContentSize = CGSizeMake(340,380)
         
     }
 
