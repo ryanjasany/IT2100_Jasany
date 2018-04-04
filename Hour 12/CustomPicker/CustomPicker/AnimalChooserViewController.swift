@@ -63,16 +63,16 @@ class AnimalChooserViewController: UIViewController, UIPickerViewDataSource, UIP
         
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
         let initialView: ViewController = presentingViewController as!ViewController
         
         if component==kAnimalComponent{
             let chosenSound: Int = pickerView.selectedRow(inComponent: kSoundComponent)
-            initialView.displayAnimal(animalNames[row],withSound: animalsSounds[chosenSound],fromComponent: "the Animal")
+            initialView.displayAnimal(chosenAnimal: animalNames[row],withSound: animalSounds[chosenSound],fromComponent: "the Animal")
         }else{
             
             let chosenAnimal: Int = pickerView.selectedRow(inComponent: kAnimalComponent)
-            initialView.displayAnimal(chosenAnimal: animalNames[chosenAnimal], withSound: [row], fromComponent: "the Sound")
+            initialView.displayAnimal(chosenAnimal: animalNames[chosenAnimal], withSound: animalSounds[row], fromComponent: "the Sound")
         }
         
         
