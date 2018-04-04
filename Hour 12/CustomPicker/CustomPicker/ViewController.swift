@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     func displayAnimal(chosenAnimal: String, withSound chosenSound:String, fromComponent chosenComponent:String){
 
-        outputLabel.text = "You changed \(chosenComponent)( \(chosenAnimal)and the sound \(chosenSound))"
+        outputLabel.text = "You changed \(chosenComponent)( \(chosenAnimal) and the sound \(chosenSound))"
         
     }
     
