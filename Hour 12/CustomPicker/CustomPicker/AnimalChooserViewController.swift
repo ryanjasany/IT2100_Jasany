@@ -8,8 +8,77 @@
 
 import UIKit
 
-class AnimalChooserViewController: UIViewController {
-
+class AnimalChooserViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    //Protocol Stubs UIPickerViewDataSource
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return kComponentCount
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        if component==kAnimalComponent{
+            return animalNames.count
+            
+        }else{
+            return animalSounds.count
+            
+        }
+    }
+    
+    //Protocol Stubs UIPickerViewDelegate
+    func pickerView(_ pickerView: UIPickerView, viewForRow row:Int, forComponent component: Int, reusing view: UIView?)-> UIView{
+        if component == kAnimalComponent{
+            let chosenImageView: UIImageView = animalImages[row]
+            let workaroundImageView: UIImageView = UIImageView(frame: chosenImageView.frame)
+            workaroundImageView.backgroundColor = UIColor(patternImage: chosenImageView.image!)
+            return workaroundImageView
+            
+            
+        }else{
+            //let soundLabel: UILabel = UILabel(frame: CGRectMake(0,0,100,32))
+            let soundLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 32))
+            soundLabel.backgroundColor = UIColor.clear
+            soundLabel.text = animalSounds[row]
+            return soundLabel
+        }
+        
+    }
+    
+    func pickerView(_ pickerView:UIPickerView, rowHeightForComponent component: Int)-> CGFloat{
+        return 55.0
+        
+    }
+    
+    func pickerView(_ pickerView:UIPickerView, widthForComponent component: Int)-> CGFloat{
+        
+        if component == kAnimalComponent{
+            return 75.0;
+            
+        }else{
+            return 150.0
+            
+        }
+        
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+        let initialView: ViewController = presentingViewController as!ViewController
+        
+        if component==kAnimalComponent{
+            let chosenSound: Int = pickerView.selectedRow(inComponent: kSoundComponent)
+            initialView.displayAnimal(animalNames[row],withSound: animalsSounds[chosenSound],fromComponent: "the Animal")
+        }else{
+            
+            let chosenAnimal: Int = pickerView.selectedRow(inComponent: kAnimalComponent)
+            initialView.displayAnimal(chosenAnimal: animalNames[chosenAnimal], withSound: [row], fromComponent: "the Sound")
+        }
+        
+        
+    }
+    
+    
     let kComponentCount: Int = 2
     let kAnimalComponent: Int = 0
     let kSoundComponent: Int = 1

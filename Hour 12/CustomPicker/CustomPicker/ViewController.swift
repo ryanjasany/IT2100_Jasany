@@ -12,6 +12,11 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var outputLabel: UILabel!
     
+    func displayAnimal(chosenAnimal: String, withSound chosenSound:String, fromComponent chosenComponent:String){
+
+        outputLabel.text = "You changed \(chosenComponent)(\(chosenAnimal)and the sound \(chosenSound))"
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
