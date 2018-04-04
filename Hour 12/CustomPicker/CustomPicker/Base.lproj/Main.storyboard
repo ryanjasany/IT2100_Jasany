@@ -34,7 +34,9 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="AZR-EP-LEl"/>
                                     <barButtonItem title="Choose an Animal and Sound" id="rzu-rP-YPl">
                                         <connections>
-                                            <segue destination="cZL-kf-xDH" kind="presentation" id="oXE-t6-MQD"/>
+                                            <segue destination="cZL-kf-xDH" kind="popoverPresentation" popoverAnchorBarButtonItem="rzu-rP-YPl" id="oXE-t6-MQD">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="IoX-Jm-VmA"/>

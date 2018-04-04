@@ -118,7 +118,7 @@ class AnimalChooserViewController: UIViewController, UIPickerViewDataSource, UIP
         ]
         //UIImageView(image:UIImage(named:".png")),
         
-        //preferredContentSize = CGSizeMake(340,380)
+        preferredContentSize = CGSize(width:340,height:380)
         
     }
 
