@@ -39,35 +39,35 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="address-line1"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FLf-DI-h9g">
                                 <rect key="frame" x="110" y="165" width="165" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="address-line2"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="flX-K8-Vh7">
                                 <rect key="frame" x="110" y="257" width="165" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="address-level2"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xrE-OE-hTU">
                                 <rect key="frame" x="110" y="326" width="165" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="address-level1"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="26l-gx-rjF">
                                 <rect key="frame" x="110" y="413" width="165" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="postal-code"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETY-aj-uu7">
                                 <rect key="frame" x="143" y="91" width="99" height="28"/>
@@ -102,7 +102,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="email"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHC-uh-Ked">
                                 <rect key="frame" x="143" y="451" width="99" height="28"/>
@@ -117,6 +117,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
+                                    <action selector="updateMoreInformation:" destination="xWb-gi-o7V" eventType="touchUpInside" id="h73-ZG-uRM"/>
                                     <segue destination="Vzx-uf-g3o" kind="show" id="aUf-fM-CUc"/>
                                 </connections>
                             </button>
@@ -124,6 +125,14 @@
                         <color key="backgroundColor" red="0.96368073070000004" green="1" blue="0.27462086060000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="KYs-QL-zW8"/>
                     </view>
+                    <connections>
+                        <outlet property="addressLn1Input" destination="96d-2d-KcQ" id="LUD-hM-35M"/>
+                        <outlet property="addressLn2Input" destination="FLf-DI-h9g" id="8Z3-xh-oTb"/>
+                        <outlet property="cityInput" destination="flX-K8-Vh7" id="Ncm-gE-YBe"/>
+                        <outlet property="emailInput" destination="D1d-j4-RmQ" id="Qb4-IB-AVt"/>
+                        <outlet property="stateInput" destination="xrE-OE-hTU" id="5BY-xS-tqA"/>
+                        <outlet property="zipInput" destination="26l-gx-rjF" id="s7t-y7-eyB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBX-en-OY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -148,7 +157,17 @@
                                 <rect key="frame" x="67" y="190" width="240" height="318"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Name&lt;first&gt; &lt;middle&gt; &lt;last&gt;Address&lt;address line 1&gt;&lt;address line 2&gt;&lt;city&gt;, &lt;state&gt; &lt;zip&gt;Email&lt;email address&gt;</string>
+                                <string key="text">Name
+&lt;first&gt; &lt;middle&gt; &lt;last&gt;
+
+Address
+&lt;address line 1&gt;
+&lt;address line 2&gt;
+&lt;city&gt;, &lt;state&gt; &lt;zip&gt;
+
+Email
+&lt;email address&gt;
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -156,6 +175,9 @@
                         <color key="backgroundColor" red="0.83027928719999999" green="0.87473402079999996" blue="0.94559585489999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="cIP-wE-HSu"/>
                     </view>
+                    <connections>
+                        <outlet property="informationOutlet" destination="XRU-5W-d0M" id="dkS-x7-pCM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="quN-pE-bTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -175,6 +197,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
+                                    <action selector="updateInformation:" destination="nga-vY-ZtT" eventType="touchUpInside" id="tXR-ri-YTP"/>
                                     <segue destination="xWb-gi-o7V" kind="show" id="fd5-lE-ExU"/>
                                 </connections>
                             </button>
@@ -204,27 +227,32 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p9B-pG-nx2">
                                 <rect key="frame" x="100" y="270" width="174" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="additional-name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ehj-5f-U6b">
                                 <rect key="frame" x="100" y="364" width="174" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="family-name"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.88748054210000005" green="0.63719633740000003" blue="0.99740932640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="jr0-4l-RrX"/>
                     </view>
                     <navigationItem key="navigationItem" id="erG-ML-Ump"/>
+                    <connections>
+                        <outlet property="firstInput" destination="BMI-K5-ciC" id="VyK-Oy-mMI"/>
+                        <outlet property="lastInput" destination="Ehj-5f-U6b" id="fW6-b6-S6C"/>
+                        <outlet property="middleInput" destination="p9B-pG-nx2" id="dQi-FU-tjp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SpK-aq-PEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

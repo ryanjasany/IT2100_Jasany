@@ -10,6 +10,22 @@ import UIKit
 
 class NavigationViewController: UINavigationController {
 
+    var firstName:String = ""
+    var middleName:String = ""
+    var lastName:String  = ""
+    
+    var addressLn1:String = ""
+    var addressLn2:String = ""
+    var city:String = ""
+    var state:String = ""
+    var zip:String = ""
+    var email:String = ""
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
