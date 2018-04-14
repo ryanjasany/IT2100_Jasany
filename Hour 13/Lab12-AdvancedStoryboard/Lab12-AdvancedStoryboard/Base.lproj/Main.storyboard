@@ -228,6 +228,9 @@ Email
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="name"/>
+                                <connections>
+                                    <action selector="hideKeyboard:" destination="nga-vY-ZtT" eventType="editingDidEndOnExit" id="cnz-aA-2uj"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p9B-pG-nx2">
                                 <rect key="frame" x="100" y="270" width="174" height="30"/>
@@ -235,6 +238,9 @@ Email
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="additional-name"/>
+                                <connections>
+                                    <action selector="hideKeyboard:" destination="nga-vY-ZtT" eventType="editingDidEndOnExit" id="Nrv-MA-vbp"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ehj-5f-U6b">
                                 <rect key="frame" x="100" y="364" width="174" height="30"/>
@@ -242,6 +248,9 @@ Email
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="family-name"/>
+                                <connections>
+                                    <action selector="hideKeyboard:" destination="nga-vY-ZtT" eventType="editingDidEndOnExit" id="YOT-Bf-kWD"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.88748054210000005" green="0.63719633740000003" blue="0.99740932640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

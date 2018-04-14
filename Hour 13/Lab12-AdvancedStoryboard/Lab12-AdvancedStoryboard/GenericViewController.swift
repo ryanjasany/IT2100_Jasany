@@ -57,10 +57,24 @@ class GenericViewController: UIViewController {
         (parent as! NavigationViewController).zip = zipInput.text!
         (parent as! NavigationViewController).email = emailInput.text!
         
-        informationOutlet.text = "Updated values \((parent as! NavigationViewController).addressLn1)"
+        
+    }
+    
+    
+    @IBAction func hideKeyboard(_ sender: Any) {
+        firstInput.resignFirstResponder()
+        middleInput.resignFirstResponder()
+        lastInput.resignFirstResponder()
+//        addressLn1Input.resignFirstResponder()
+//        addressLn2Input.resignFirstResponder()
+//        cityInput.resignFirstResponder()
+//        stateInput.resignFirstResponder()
+//        zipInput.resignFirstResponder()
+//        emailInput.resignFirstResponder()
         
         
     }
+    
     
     
     override func viewDidLoad() {
