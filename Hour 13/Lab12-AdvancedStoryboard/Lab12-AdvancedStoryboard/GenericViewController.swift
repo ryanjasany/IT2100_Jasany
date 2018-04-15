@@ -65,15 +65,22 @@ class GenericViewController: UIViewController {
         firstInput.resignFirstResponder()
         middleInput.resignFirstResponder()
         lastInput.resignFirstResponder()
-//        addressLn1Input.resignFirstResponder()
-//        addressLn2Input.resignFirstResponder()
-//        cityInput.resignFirstResponder()
-//        stateInput.resignFirstResponder()
-//        zipInput.resignFirstResponder()
-//        emailInput.resignFirstResponder()
         
         
     }
+    
+    
+    @IBAction func hideKeyboardScene2(_ sender: Any) {
+        
+        addressLn1Input.resignFirstResponder()
+        addressLn2Input.resignFirstResponder()
+        cityInput.resignFirstResponder()
+        stateInput.resignFirstResponder()
+        zipInput.resignFirstResponder()
+        emailInput.resignFirstResponder()
+
+    }
+    
     
     
     
