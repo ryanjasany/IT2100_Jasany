@@ -1,39 +1,24 @@
 //
-//  NavigationViewController.swift
+//  SummaryViewController.swift
 //  Lab12-AdvancedStoryboard
 //
-//  Created by user135477 on 4/14/18.
+//  Created by user135477 on 4/15/18.
 //  Copyright © 2018 Ryan Jasany. All rights reserved.
 //
 
 import UIKit
 
-class NavigationViewController: UINavigationController {
+class SummaryViewController: UIViewController {
 
-    var firstName:String = ""
-    var middleName:String = ""
-    var lastName:String  = ""
     
-    var addressLn1:String = ""
-    var addressLn2:String = ""
-    var city:String = ""
-    var state:String = ""
-    var zip:String = ""
-    var email:String = ""
+    @IBOutlet weak var informationDisplay: UITextView!
     
-    
-    
-    
-    func informationMessage() -> String{
-        
-        
-        return "\(firstName), \(middleName), \(lastName)"
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        informationDisplay.text = (parent as! NavigationViewController).firstName
+        
         // Do any additional setup after loading the view.
     }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC82583D2083710000FCE9BF /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC82583C2083710000FCE9BF /* SummaryViewController.swift */; };
 		ACD3EFDF208242620076ADB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD3EFDE208242620076ADB4 /* AppDelegate.swift */; };
 		ACD3EFE4208242620076ADB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACD3EFE2208242620076ADB4 /* Main.storyboard */; };
 		ACD3EFE6208242640076ADB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACD3EFE5208242640076ADB4 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC82583C2083710000FCE9BF /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		ACD3EFDB208242620076ADB4 /* Lab12-AdvancedStoryboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lab12-AdvancedStoryboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACD3EFDE208242620076ADB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACD3EFE3208242620076ADB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				ACD3EFE2208242620076ADB4 /* Main.storyboard */,
 				ACD3EFF0208243090076ADB4 /* NavigationViewController.swift */,
 				ACD3EFF2208243C50076ADB4 /* GenericViewController.swift */,
+				AC82583C2083710000FCE9BF /* SummaryViewController.swift */,
 				ACD3EFE5208242640076ADB4 /* Assets.xcassets */,
 				ACD3EFE7208242640076ADB4 /* LaunchScreen.storyboard */,
 				ACD3EFEA208242640076ADB4 /* Info.plist */,
@@ -141,6 +144,7 @@
 				ACD3EFF3208243C50076ADB4 /* GenericViewController.swift in Sources */,
 				ACD3EFF1208243090076ADB4 /* NavigationViewController.swift in Sources */,
 				ACD3EFDF208242620076ADB4 /* AppDelegate.swift in Sources */,
+				AC82583D2083710000FCE9BF /* SummaryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

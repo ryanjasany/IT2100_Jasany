@@ -33,10 +33,7 @@ class GenericViewController: UIViewController {
     
     @IBOutlet weak var emailInput: UITextField!
     
-    //Third outlets
-    
-    @IBOutlet weak var informationOutlet: UITextView!
-    
+
     //Actions
     
     @IBAction func updateInformation(_ sender: Any) {

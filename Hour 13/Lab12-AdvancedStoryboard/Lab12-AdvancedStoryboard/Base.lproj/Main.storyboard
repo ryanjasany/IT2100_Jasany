@@ -159,7 +159,7 @@
         <!--Third-->
         <scene sceneID="ABq-Qi-8Ch">
             <objects>
-                <viewController title="Third" id="Vzx-uf-g3o" customClass="GenericViewController" customModule="Lab12_AdvancedStoryboard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Third" id="Vzx-uf-g3o" customClass="SummaryViewController" customModule="Lab12_AdvancedStoryboard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="URs-k5-mBQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,7 +194,7 @@ Email
                         <viewLayoutGuide key="safeArea" id="cIP-wE-HSu"/>
                     </view>
                     <connections>
-                        <outlet property="informationOutlet" destination="XRU-5W-d0M" id="dkS-x7-pCM"/>
+                        <outlet property="informationDisplay" destination="XRU-5W-d0M" id="rGG-rv-HSF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="quN-pE-bTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
