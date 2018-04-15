@@ -17,7 +17,7 @@ class SummaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        informationDisplay.text = (parent as! NavigationViewController).firstName
+        informationDisplay.text = (parent as! NavigationViewController).informationMessage()
         
         // Do any additional setup after loading the view.
     }

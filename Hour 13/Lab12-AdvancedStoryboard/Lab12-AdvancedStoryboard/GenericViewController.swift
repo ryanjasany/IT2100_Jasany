@@ -42,6 +42,7 @@ class GenericViewController: UIViewController {
         (parent as! NavigationViewController).middleName = middleInput.text!
         (parent as! NavigationViewController).lastName = lastInput.text!
         
+        (parent as! NavigationViewController).viewIndex = 2
     }
     
     
@@ -54,7 +55,7 @@ class GenericViewController: UIViewController {
         (parent as! NavigationViewController).zip = zipInput.text!
         (parent as! NavigationViewController).email = emailInput.text!
         
-        
+        (parent as! NavigationViewController).viewIndex = 3
     }
     
     
@@ -83,8 +84,20 @@ class GenericViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
+        //Fix issues where fields cleared on cycling through views
+        if (parent as! NavigationViewController).viewIndex == 2 {
+            
+            addressLn1Input.text = (parent as! NavigationViewController).addressLn1
+            addressLn2Input.text = (parent as! NavigationViewController).addressLn2
+            cityInput.text = (parent as! NavigationViewController).city
+            stateInput.text = (parent as! NavigationViewController).state
+            zipInput.text =  (parent as! NavigationViewController).zip
+            emailInput.text = (parent as! NavigationViewController).email            
+        }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

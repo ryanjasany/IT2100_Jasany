@@ -21,13 +21,25 @@ class NavigationViewController: UINavigationController {
     var zip:String = ""
     var email:String = ""
     
+    var viewIndex:Int = 1
     
     
     
-    func informationMessage() -> String{
+    func informationMessage() -> String {
         
         
-        return "\(firstName), \(middleName), \(lastName)"
+        return """
+        Name
+        \(firstName) \(middleName) \(lastName)
+        
+        Address
+        \(addressLn1)
+        \(addressLn2)
+        \(city), \(state) \(zip)
+        
+        Email
+        \(email)
+        """
         
     }
     
