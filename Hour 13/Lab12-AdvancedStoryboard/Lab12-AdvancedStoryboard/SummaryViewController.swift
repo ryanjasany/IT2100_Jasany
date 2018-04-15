@@ -13,11 +13,15 @@ class SummaryViewController: UIViewController {
     
     @IBOutlet weak var informationDisplay: UITextView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+         informationDisplay.text = (parent as! NavigationViewController).informationMessage()
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        informationDisplay.text = (parent as! NavigationViewController).informationMessage()
         
         // Do any additional setup after loading the view.
     }
