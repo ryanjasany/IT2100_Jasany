@@ -8,15 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    let redFlowers:[String] = ["Gerbera", "Peony", "Rose", "Poppy"]
+    
+    let blueFlowers:[String] = ["Hyacinth", "Hydrangea", "Sea Holly", "Phlox", "Iris"]
 
-    
-
-    let redFlowers: [String] = ["Gerbera","Peony","Rose","Poppy"]
-    
-    let blueFlowers: [String] = ["Hyacinth","Hydrangea","Sea Holly","Phlox","Iris"]
-    
+    //
     let kSectionCount:Int = 2
     let kRedSection:Int = 0
     let kBlueSection:Int = 1
@@ -39,9 +37,13 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         switch section{
         case kRedSection:
+            
             return redFlowers.count
+
         case kBlueSection:
+
             return blueFlowers.count
+            
         default:
             return 0
             
@@ -71,18 +73,41 @@ class ViewController: UIViewController, UITableViewDataSource {
         switch(indexPath.section){
         case kRedSection:
             cell.textLabel!.text = redFlowers[indexPath.row]
-        case kRedSection:
+        case kBlueSection:
             cell.textLabel!.text = blueFlowers[indexPath.row]
         default:
             cell.textLabel!.text = "Unknown"
             
         }
         
-        let flowerImage: UIImage = UIImage(named: cell.textLabel!.text!)!
-        
-        cell.imageView!.image = flowerImage
-        
+        let flowerImage: UIImage=UIImage(named: cell.textLabel!.text!)!
+        cell.imageView!.image=flowerImage
         return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        
+        var flowerMessage: String
+        switch indexPath.section{
+        case kRedSection:
+            flowerMessage = "You chose the red flower \(redFlowers[indexPath.row])"
+        case kBlueSection:
+            flowerMessage = "You chose the blue flower \(blueFlowers[indexPath.row])"
+        default:
+            flowerMessage = "I have no idea what you chose?!"
+            
+        }
+        
+        let alertController = UIAlertController(title: "Flower Selected", message: flowerMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let defaultAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil)
+        
+        alertController.addAction(defaultAction)
+        
+        present(alertController, animated: true, completion: nil)
+        
+        
         
     }
     
