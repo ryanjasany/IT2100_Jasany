@@ -10,14 +10,34 @@ import UIKit
 
 class MasterViewController: UITableViewController {
 
+    var flowerData:[AnyObject] = []
+    var flowerSections:[String] = []
+    
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
 
+    func createFlowerData(){
+        
+        var redFlowers:[Dictionary<String,String>] = []
+        var blueFlowers:[Dictionary<String,String>] = []
+        
+        flowerSections = ["Red Flowers", "Blue Flowers"]
+        
+        redFlowers.append(["name":"Poppy", "picture":"Poppy.png", "url":"https://en.wikipedia.org/wiki/Poppy"])
+        redFlowers.append(["name":"Straw Flower", "picture":"Strawflower.png", "url":"https://en.wikipedia.org/wiki/Peony"])
+        
+        blueFlowers.append(["name":"Hyacinth", "picture":"Hyacinth.png", "url":"https://en.wikipedia.org/wiki/Hyacinth_(flower)"])
+        blueFlowers.append(["name":"Iris", "picture":"Iris.png", "url":"https://en.wikipedia.org/wiki/Iris_(plant)"])
+        
+        flowerData = [redFlowers, blueFlowers] as [AnyObject]
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         navigationItem.leftBarButtonItem = editButtonItem
+        
+        createFlowerData()
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         navigationItem.rightBarButtonItem = addButton
@@ -61,18 +81,29 @@ class MasterViewController: UITableViewController {
     // MARK: - Table View
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return flowerSections.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects.count
+        return flowerData[section].count
     }
 
+func tableView(tableView: UITableView, titleForHeaderInSection section:  Int) -> String? {
+        
+    return flowerSections[section]
+        
+        
+    }
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "flowerCell", for: indexPath)
 
-        let object = objects[indexPath.row] as! NSDate
-        cell.textLabel!.text = object.description
+        //let object = objects[indexPath.row] as! NSDate
+        //cell.textLabel!.text = object.description
+        cell.textLabel!.text = ((flowerData[indexPath.section] as! [AnyObject])[indexPath.row] as! [String:String])["name"]as String!
+        cell.detailTextLabel!.text = ((flowerData[indexPath.section] as! [AnyObject])[indexPath.row] as! [String:String])["url"]as String!
+        cell.imageView!.image = UIImage(named:((flowerData[indexPath.section] as! [AnyObject])[indexPath.row] as! [String:String])["picture"]as String!)!
         return cell
     }
 
