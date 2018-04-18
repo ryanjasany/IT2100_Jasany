@@ -16,10 +16,19 @@ class DetailViewController: UIViewController {
     
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail = detailItem {
-            if let label = detailDescriptionLabel {
-                label.text = detail.description
+        if let detail = self.detailItem {
+            
+            if let webview = detailWebView{
+            
+            let detailURL:URL = URL(string: detail["url"] as!String!)!
+                webview.loadRequest(URLRequest(url:detailURL))
+            navigationItem.title = detail["name"]as! String!
+                detailDescriptionLabel.isHidden = true
+            
             }
+//            if let label = detailDescriptionLabel {
+//                label.text = detail.description
+//            }
         }
     }
 
@@ -34,7 +43,7 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    var detailItem: NSDate? {
+    var detailItem: AnyObject? {
         didSet {
             // Update the view.
             configureView()
