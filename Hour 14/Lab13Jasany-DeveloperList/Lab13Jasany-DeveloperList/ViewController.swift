@@ -76,5 +76,35 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        
+        var developerMessage: String
+        switch indexPath.section{
+        case kWebSection:
+            developerMessage = "You chose the Web developer \(webDevelopers[indexPath.row])"
+        case kMobileSection:
+            developerMessage = "You chose the Mobile developer \(mobileDevelopers[indexPath.row])"
+        default:
+            developerMessage = "I have no idea what you chose?!"
+            
+        }
+        
+        let alertController = UIAlertController(title: "Developer Selected", message: developerMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let defaultAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil)
+        
+        alertController.addAction(defaultAction)
+        
+        present(alertController, animated: true, completion: nil)
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
 }
 
