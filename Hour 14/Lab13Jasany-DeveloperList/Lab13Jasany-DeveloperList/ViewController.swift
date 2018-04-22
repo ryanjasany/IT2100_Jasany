@@ -70,10 +70,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         switch(indexPath.section){
         case kWebSection:
             cell.textLabel!.text = webDevelopers[indexPath.row]
+            cell.detailTextLabel!.text = webDevelopersTitle[indexPath.row]
         case kMobileSection:
             cell.textLabel!.text = mobileDevelopers[indexPath.row]
+            cell.detailTextLabel!.text = mobileDevelopersTitle[indexPath.row]
         default:
             cell.textLabel!.text = "Unknown"
+            cell.detailTextLabel!.text = "Unknown"
         }
         
         let developerImage: UIImage = UIImage(named: cell.textLabel!.text!)!
@@ -89,9 +92,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         var developerMessage: String
         switch indexPath.section{
         case kWebSection:
-            developerMessage = "You chose the Web developer \(webDevelopers[indexPath.row])"
+            developerMessage = """
+            Web developer: \(webDevelopers[indexPath.row])
+            Title: \(webDevelopersTitle[indexPath.row])
+            Details: \(webDevelopersDetails[indexPath.row])
+            """
         case kMobileSection:
-            developerMessage = "You chose the Mobile developer \(mobileDevelopers[indexPath.row])"
+            developerMessage = """
+            Mobile developer: \(mobileDevelopers[indexPath.row])
+            Title: \(mobileDevelopersTitle[indexPath.row])
+            Details: \(mobileDevelopersDetails[indexPath.row])
+            """
         default:
             developerMessage = "I have no idea what you chose?!"
             
